@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "things to before npm installs modules..."
+
+npm i -g node-pre-gyp
+npm i -g node-gyp --python=/usr/bin/python2.7

@@ -1,0 +1,32 @@
+{
+  "title": "RGApplied",
+  "name": "RGApplied.com",
+  "version": "1.0.3",
+  "description": "Static website",
+  "keywords": [],
+  "homepage": "https://rgapplied.com/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:devap/rgstatic.git"
+  },
+  "dependencies": {
+    "bootstrap": "4.1.1",
+    "font-awesome": "4.7.0",
+    "jquery": "3.3.1",
+    "jquery.easing": "^1.4.1",
+    "magnific-popup": "^1.1.0",
+    "scrollreveal": "3.4.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-header": "^2.0.5",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "lodash": "^4.17.11",
+    "popper.js": "^1.14.6"
+  }
+}

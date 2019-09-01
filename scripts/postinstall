@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "npm is done installing modules..."
+
+chmod +x node_modules/flow-bin/flow-osx-*/flow
+
