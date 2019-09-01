@@ -1,1 +1,1 @@
-aws --profile adminuser-govardhana s3 sync ./s3/ s3://rgapplied.com/
+aws --profile adminuser-govardhana s3 sync ./s3/ s3://smith-safety.com/
