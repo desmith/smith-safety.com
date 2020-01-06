@@ -1,1 +1,0 @@
-aws --profile adminuser-govardhana s3 sync s3://smith-safety.com/ ./s3/

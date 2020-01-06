@@ -25,7 +25,7 @@ gulp.task('vendor', (done) => {
       '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
       '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
     ])
-    .pipe(gulp.dest('./s3/vendor/bootstrap'))
+    .pipe(gulp.dest('./docs/vendor/bootstrap'))
 
   // Font Awesome
   gulp.src([
@@ -35,32 +35,32 @@ gulp.task('vendor', (done) => {
       '!./node_modules/font-awesome/.*',
       '!./node_modules/font-awesome/*.{txt,json,md}'
     ])
-    .pipe(gulp.dest('./s3/vendor/font-awesome'))
+    .pipe(gulp.dest('./docs/vendor/font-awesome'))
 
   // jQuery
   gulp.src([
       './node_modules/jquery/dist/*',
       '!./node_modules/jquery/dist/core.js'
     ])
-    .pipe(gulp.dest('./s3/vendor/jquery'))
+    .pipe(gulp.dest('./docs/vendor/jquery'))
 
   // jQuery Easing
   gulp.src([
       './node_modules/jquery.easing/*.js'
     ])
-    .pipe(gulp.dest('./s3/vendor/jquery-easing'))
+    .pipe(gulp.dest('./docs/vendor/jquery-easing'))
 
   // Magnific Popup
   gulp.src([
       './node_modules/magnific-popup/dist/*'
     ])
-    .pipe(gulp.dest('./s3/vendor/magnific-popup'))
+    .pipe(gulp.dest('./docs/vendor/magnific-popup'))
 
   // Scrollreveal
   gulp.src([
       './node_modules/scrollreveal/dist/*.js'
     ])
-    .pipe(gulp.dest('./s3/vendor/scrollreveal'))
+    .pipe(gulp.dest('./docs/vendor/scrollreveal'))
 
   done();
 });
@@ -71,20 +71,20 @@ gulp.task('css:compile', () =>  {
     .pipe(sass.sync({
       outputStyle: 'expanded'
     }).on('error', sass.logError))
-    .pipe(gulp.dest('./s3/css'))
+    .pipe(gulp.dest('./docs/css'))
 });
 
 // Minify CSS
 gulp.task('css:minify', gulp.series('css:compile', () => {
   return gulp.src([
-      './s3/css/*.css',
-      '!./s3/css/*.min.css'
+      './docs/css/*.css',
+      '!./docs/css/*.min.css'
     ])
     .pipe(cleanCSS())
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./s3/css'))
+    .pipe(gulp.dest('./docs/css'))
     .pipe(browserSync.stream());
 }));
 
@@ -94,14 +94,14 @@ gulp.task('css', gulp.series('css:compile', 'css:minify'));
 // Minify JavaScript
 gulp.task('js:minify', () =>  {
   return gulp.src([
-      './s3/js/*.js',
-      '!./s3/js/*.min.js'
+      './docs/js/*.js',
+      '!./docs/js/*.min.js'
     ])
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./s3/js'))
+    .pipe(gulp.dest('./docs/js'))
     .pipe(browserSync.stream());
 });
 
@@ -115,7 +115,7 @@ gulp.task('default', gulp.series('css', 'js', 'vendor'));
 gulp.task('browserSync', () =>  {
   browserSync.init({
     server: {
-      baseDir: "./s3"
+      baseDir: "./docs"
     }
   });
 });
@@ -123,6 +123,6 @@ gulp.task('browserSync', () =>  {
 // Dev task
 gulp.task('dev', gulp.series('css', 'js', 'browserSync', () =>  {
   gulp.watch('./scss/*.scss', ['css']);
-  gulp.watch('./s3/js/*.js', ['js']);
-  gulp.watch('./s3/*.html', browserSync.reload);
+  gulp.watch('./docs/js/*.js', ['js']);
+  gulp.watch('./docs/*.html', browserSync.reload);
 }));
