@@ -23,19 +23,7 @@ After installation, run `npm install` and then run `gulp dev` which will open up
 - `gulp minify-js` minifies the themes JS file
 - `gulp copy` copies dependencies from node_modules to the vendor directory
 
-
-### Deployment
-
-To push the files to production (the site is hosted on Amazon S3 and served via CloudFront), simply run the following script:
-
-./scripts/sync_2_s3
-
-
-(You will need the appropriate credentials to be in place in ~/.aws/credentials)
-
-
 ## About
-
 
 
 ## Copyright and License
