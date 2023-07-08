@@ -11,22 +11,22 @@
     "url": "git@gitlab.com:devap/rgstatic.git"
   },
   "dependencies": {
-    "bootstrap": "4.3.1",
+    "bootstrap": "5.3.0",
     "font-awesome": "4.7.0",
-    "jquery": "3.4.0",
+    "jquery": "3.7.0",
     "jquery.easing": "^1.4.1",
     "magnific-popup": "^1.1.0",
-    "scrollreveal": "3.4.0"
+    "scrollreveal": "4.0.9"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.29.3",
     "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.0.0",
-    "gulp-header": "^2.0.5",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.1",
-    "lodash": "^4.17.11",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-header": "^2.0.9",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "lodash": "^4.17.21",
     "popper.js": "^1.14.6"
   }
 }
